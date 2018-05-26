@@ -1,8 +1,8 @@
 import * as actionTypes from './actionTypes';
 
-export function consoleLog() {
+export function contactsUpdated(contacts) {
   return {
-    type: actionTypes.CONTACT_CONSOLE_LOG,
-    hello: 'TEST',
+    type: actionTypes.CONTACT_UPDATED,
+    contacts,
   };
 }

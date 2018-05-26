@@ -13,7 +13,6 @@ import './style.css';
 const propTypes = {
   contacts: PropTypes.array.isRequired,
   typeCard: PropTypes.string.isRequired,
-  consoleLog: PropTypes.func.isRequired,
   changeTypeCard: PropTypes.func.isRequired,
 };
 
@@ -21,10 +20,8 @@ const Directory = (props) => {
   const {
     contacts,
     typeCard,
-    consoleLog,
     changeTypeCard,
   } = props;
-  consoleLog();
 
   let currentLetter = '';
 

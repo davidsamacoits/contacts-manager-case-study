@@ -6,3 +6,24 @@ export function changeTypeCard(typeCard) {
     typeCard,
   };
 }
+
+export function loadContacts(order, search) {
+  return {
+    type: actionTypes.DIRECTORY_LOAD_CONTACTS,
+    order,
+    search,
+  };
+}
+
+export function loadContactsSuccess() {
+  return {
+    type: actionTypes.DIRECTORY_LOAD_CONTACTS_SUCCESS,
+  };
+}
+
+export function loadContactsFailure(error) {
+  return {
+    type: actionTypes.DIRECTORY_LOAD_CONTACTS_FAILURE,
+    error,
+  };
+}

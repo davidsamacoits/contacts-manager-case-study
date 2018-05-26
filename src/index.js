@@ -9,6 +9,9 @@ import createHistory from 'history/createBrowserHistory';
 
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 
+// Actions to execute when the application is loading
+import { loadContacts } from './services/directoryService/actions';
+
 // Routes
 import Routes from './nav/Routes';
 
@@ -40,6 +43,9 @@ const store = createStore(
 );
 /* eslint-enable */
 sagaMiddleware.run(sagas);
+
+// Load contacts for the first time
+store.dispatch(loadContacts());
 
 ReactDOM.render(
   <Provider store={store}>
