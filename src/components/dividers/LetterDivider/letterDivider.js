@@ -8,7 +8,7 @@ const propTypes = {
 };
 
 const LetterDivider = ({ letter }) => (
-  <div className="letter-divider" key={letter}>
+  <div className="letter-divider">
     {letter}
   </div>
 );

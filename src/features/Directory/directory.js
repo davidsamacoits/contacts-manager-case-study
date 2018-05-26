@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import * as Icons from 'react-icons/lib/md';
+import uniqueId from 'lodash/uniqueId';
 
 import ContactCard from '../../components/cards/ContactCard';
 import LetterDivider from '../../components/dividers/LetterDivider';
@@ -35,7 +36,7 @@ const Directory = (props) => {
     if (letter !== currentLetter) {
       currentLetter = letter;
       return (
-        <LetterDivider letter={currentLetter} />
+        <LetterDivider letter={currentLetter} key={uniqueId(currentLetter)} />
       );
     }
     return null;
@@ -51,6 +52,7 @@ const Directory = (props) => {
       jobTitle={item.jobTitle}
       className="contacts-container__card"
       type={typeCard}
+      key={uniqueId(item.id)}
     />,
   ]));
 
@@ -59,7 +61,7 @@ const Directory = (props) => {
       <header>
         <div className="filters-container">
           <div className="filters-order">
-            <span className="filters-name">Order by</span>
+            <span className="filters-name"><Icons.MdFilterList size={28} /></span>
             <button
               className={cx('filters-order__btn', { 'filters-order__btn--active': order === ORDER.ASC })}
               onClick={() => changeOrder(ORDER.ASC)}
