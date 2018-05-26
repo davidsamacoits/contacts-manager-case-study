@@ -1,0 +1,14 @@
+@import 'global.scss';
+
+.letter-divider {
+  font-size: 1.25em;
+  text-transform: uppercase;
+  color: $color_grey_dark;
+  border-bottom: 2px solid $color_grey_dark;
+  width: 3rem;
+  padding: 0.25rem 1rem;
+  margin: 3rem 0 1.5rem 0;
+  &:first-child {
+    margin-top: 0;
+  }
+}
