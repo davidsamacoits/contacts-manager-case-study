@@ -23,10 +23,10 @@ You'll need to follow those steps in order to run the app on your computer (assu
 1. Clone this repo on your compouter
 2. Install [json-server](https://github.com/typicode/json-server) globally using npm   
 ```bash
-npm i -g json-server
+$ npm i -g json-server
 ```
 3. Go into the `server` folder
 4. Start the mock server
 ```bash
-json-server contacts.json --port 3004
+$ json-server contacts.json --port 3004
 ```
