@@ -9,7 +9,7 @@ Simple contacts manager application case study
 ✅ Create git repo and README.md  
 ✅ Set up work environment  
 ✅ Set up mock server  
-⬜️ Build JSON mocks  
+✅ Build JSON mocks  
 ⬜️ Set up app boilerplate  
 ⬜️ Install and add packages to the app  
 
