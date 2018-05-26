@@ -1,8 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cx from 'classnames';
+import * as Icons from 'react-icons/lib/md';
 
 import ContactCard from '../../components/cards/ContactCard';
 import LetterDivider from '../../components/dividers/LetterDivider';
+
+import { CARD_TYPES } from '../../components/cards/ContactCard/constants';
 
 import './style.css';
 
@@ -49,8 +53,20 @@ const Directory = (props) => {
 
   return (
     <div className="directory">
-      <button onClick={() => changeTypeCard('SMALL')}>SMALL</button>
-      <button onClick={() => changeTypeCard('BIG')}>BIG</button>
+      <div className="card-types-switch-container">
+        <button
+          onClick={() => changeTypeCard(CARD_TYPES.BIG)}
+          className={cx({ active: typeCard === CARD_TYPES.BIG })}
+        >
+          <Icons.MdViewModule size={38} />
+        </button>
+        <button
+          onClick={() => changeTypeCard(CARD_TYPES.SMALL)}
+          className={cx({ active: typeCard === CARD_TYPES.SMALL })}
+        >
+          <Icons.MdViewList size={38} />
+        </button>
+      </div>
       <div className="contacts-container">
         {renderContacts()}
       </div>

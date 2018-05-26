@@ -10,5 +10,16 @@ html, body {
 
 .directory {
   padding: 1em; }
+  .directory .card-types-switch-container button {
+    border: none;
+    background: transparent;
+    color: #c7c7c7;
+    transition: color 0.25s ease-in-out;
+    outline: 0; }
+    .directory .card-types-switch-container button:hover {
+      cursor: pointer;
+      color: #717171; }
+    .directory .card-types-switch-container button.active {
+      color: #717171; }
   .directory .contacts-container .contacts-container__card {
     float: left; }

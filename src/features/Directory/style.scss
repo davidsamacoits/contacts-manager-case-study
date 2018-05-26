@@ -2,6 +2,22 @@
 
 .directory {
   padding: 1em;
+  .card-types-switch-container {
+    button {
+      border: none;
+      background: transparent;
+      color: $color_grey_dark;
+      transition: color 0.25s ease-in-out;
+      outline: 0;
+      &:hover {
+        cursor: pointer;
+        color: $color_grey_darker;
+      }
+      &.active {
+        color: $color_grey_darker;
+      }
+    }
+  }
   .contacts-container {
     .contacts-container__card {
       float: left;
