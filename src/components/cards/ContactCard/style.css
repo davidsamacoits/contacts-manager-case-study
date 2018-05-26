@@ -1,0 +1,71 @@
+* {
+  box-sizing: border-box; }
+
+html, body {
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  background: #dedede;
+  font-family: 'Lato', sans-serif; }
+
+.contact-card {
+  width: 250px;
+  display: flex;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  text-align: left;
+  transition: box-shadow .25s ease-in-out;
+  background: transparent;
+  margin: 0 1.25em 1.25em 0;
+  overflow: hidden; }
+  .contact-card.contact-card--small {
+    height: 87px;
+    width: auto; }
+  .contact-card:hover {
+    cursor: pointer;
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.35); }
+  .contact-card .contact-card__avatar img {
+    height: 88px;
+    width: auto;
+    display: block; }
+  .contact-card .contact-card__right-block {
+    flex: 1; }
+    .contact-card .contact-card__right-block .contact-card__header {
+      display: flex;
+      flex-direction: row; }
+      .contact-card .contact-card__right-block .contact-card__header .contact-card__initials {
+        background: #ed5153;
+        color: #ffffff;
+        padding: 0.75em 0.55em;
+        width: 38px;
+        text-align: center;
+        overflow: hidden;
+        font-weight: 600;
+        text-transform: uppercase; }
+      .contact-card .contact-card__right-block .contact-card__header .contact-card__name {
+        background: #ffffff;
+        color: #37455b;
+        flex: 1;
+        padding: 0.75em 0.55em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-weight: 400; }
+    .contact-card .contact-card__right-block .contact-card__picture {
+      overflow: hidden;
+      width: 100%;
+      height: 175px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center; }
+    .contact-card .contact-card__right-block .contact-card__footer {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background: #37455b;
+      color: #6f819b;
+      padding: 0.85em;
+      font-weight: 500;
+      letter-spacing: -0.5px; }
