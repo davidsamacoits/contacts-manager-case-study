@@ -6,6 +6,7 @@ import { ORDER } from '../../constants';
 export const initialState = () => ({
   typeCard: CARD_TYPES.BIG,
   order: ORDER.ASC,
+  isLoading: false,
 });
 
 export default (state = initialState(), action) => {
