@@ -12,6 +12,7 @@ Simple contacts manager application case study
 ✅ Build JSON mocks  
 ✅ Set up app boilerplate  
 ✅ Install and add packages to the app  
+✅ Add a CSS Preprocessor (SASS)  
 ⬜️ Design a lovely UI  
 ⬜️ Create components (directory, cards, detail...)  
 ⬜️ Write unit tests  
