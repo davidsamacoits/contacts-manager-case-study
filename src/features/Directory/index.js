@@ -1,9 +1,15 @@
-import React from 'react';
+import { connect } from 'react-redux';
 
-const Directory = () => (
-  <p>
-    Directory
-  </p>
-);
+import Directory from './directory';
 
-export default Directory;
+import { consoleLog } from '../../services/contactService/actions';
+
+function mapStateToProps(state) {
+  return {
+    contacts: state.contactReducer.contacts,
+  };
+}
+
+export default connect(mapStateToProps, {
+  consoleLog: () => consoleLog(),
+})(Directory);
