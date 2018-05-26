@@ -10,8 +10,13 @@ Simple contacts manager application case study
 ✅ Set up work environment  
 ✅ Set up mock server  
 ✅ Build JSON mocks  
-⬜️ Set up app boilerplate  
-⬜️ Install and add packages to the app  
+✅ Set up app boilerplate  
+✅ Install and add packages to the app  
+⬜️ Design a lovely UI  
+⬜️ Create components (directory, cards, detail...) 
+⬜️ Write unit tests  
+⬜️ Add animations and transitions  
+⬜️ Handle unavailable API
 
 ## Mock server
 
@@ -20,7 +25,7 @@ Because I wanted to implement *“real”* network calls, I decided to use the (
 ## Run the app
 
 You'll need to follow those steps in order to run the app on your computer (assuming you already have npm installed) :
-1. Clone this repo on your compouter
+1. Clone this repo on your computer
 2. Install [json-server](https://github.com/typicode/json-server) globally using npm   
 ```bash
 $ npm i -g json-server
@@ -30,3 +35,8 @@ $ npm i -g json-server
 ```bash
 $ json-server contacts.json --port 3004
 ```
+5. Open a new terminal and run
+```bash
+$ npm i && npm start
+```
+6. Enjoy! 😎
