@@ -1,0 +1,10 @@
+@import 'global.scss';
+
+.directory {
+  padding: 1em;
+  .contacts-container {
+    .contacts-container__card {
+      float: left;
+    }
+  }
+}
