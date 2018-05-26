@@ -8,19 +8,25 @@ import LetterDivider from '../../components/dividers/LetterDivider';
 
 import { CARD_TYPES } from '../../components/cards/ContactCard/constants';
 
+import { ORDER } from '../../constants';
+
 import './style.css';
 
 const propTypes = {
   contacts: PropTypes.array.isRequired,
+  order: PropTypes.string.isRequired,
   typeCard: PropTypes.string.isRequired,
   changeTypeCard: PropTypes.func.isRequired,
+  changeOrder: PropTypes.func.isRequired,
 };
 
 const Directory = (props) => {
   const {
     contacts,
+    order,
     typeCard,
     changeTypeCard,
+    changeOrder,
   } = props;
 
   let currentLetter = '';
@@ -50,20 +56,38 @@ const Directory = (props) => {
 
   return (
     <div className="directory">
-      <div className="card-types-switch-container">
-        <button
-          onClick={() => changeTypeCard(CARD_TYPES.BIG)}
-          className={cx({ active: typeCard === CARD_TYPES.BIG })}
-        >
-          <Icons.MdViewModule size={38} />
-        </button>
-        <button
-          onClick={() => changeTypeCard(CARD_TYPES.SMALL)}
-          className={cx({ active: typeCard === CARD_TYPES.SMALL })}
-        >
-          <Icons.MdViewList size={38} />
-        </button>
-      </div>
+      <header>
+        <div className="filters-container">
+          <div className="filters-order">
+            <span className="filters-name">Order by</span>
+            <button
+              className={cx('filters-order__btn', { 'filters-order__btn--active': order === ORDER.ASC })}
+              onClick={() => changeOrder(ORDER.ASC)}
+            >A-Z
+            </button>
+            <button
+              className={cx('filters-order__btn', { 'filters-order__btn--active': order === ORDER.DESC })}
+              onClick={() => changeOrder(ORDER.DESC)}
+            >Z-A
+            </button>
+          </div>
+          <div className="filters-search" />
+        </div>
+        <div className="card-types-switch-container">
+          <button
+            onClick={() => changeTypeCard(CARD_TYPES.BIG)}
+            className={cx({ active: typeCard === CARD_TYPES.BIG })}
+          >
+            <Icons.MdViewModule size={38} />
+          </button>
+          <button
+            onClick={() => changeTypeCard(CARD_TYPES.SMALL)}
+            className={cx({ active: typeCard === CARD_TYPES.SMALL })}
+          >
+            <Icons.MdViewList size={38} />
+          </button>
+        </div>
+      </header>
       <div className="contacts-container">
         {renderContacts()}
       </div>

@@ -18,6 +18,11 @@ export default (state = initialState(), action) => {
         ...state,
         typeCard: action.typeCard,
       };
+    case actionTypes.DIRECTORY_CHANGE_ORDER:
+      return {
+        ...state,
+        order: action.order,
+      };
     case actionTypes.DIRECTORY_LOAD_CONTACTS:
       return {
         ...state,

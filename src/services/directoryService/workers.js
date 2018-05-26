@@ -1,26 +1,19 @@
 import { put, call, select } from 'redux-saga/effects';
 import isError from 'lodash/isError';
 
-import { CONFIG } from '../../config';
-import { HTTP_METHODS } from '../../constants';
+import { fetchUrl } from '../../utils/network';
 
-import { loadContactsSuccess } from './actions';
+import { CONFIG } from '../../config';
+import { HTTP_METHODS, ORDER } from '../../constants';
+import { sortDesc, sortAsc } from '../../utils/helpers';
+
+import { loadContactsSuccess, loadContactsFailure } from './actions';
 import { contactsUpdated } from '../contactService/actions';
 
-const fetchEndpoint = (url, params) => fetch(url, params)
-  .then(res => res.json())
-  .then((data) => {
-    // put(loadContactsSuccess(data));
-    console.log('>>>>>>>> data', data);
-    return data;
-  })
-  .catch((err) => {
-    console.log('>>>>>>>> err', err);
-    return err;
-  });
-
-export function* watchLoadContacts(action) {
+export function* watchLoadContacts() {
   const { order, search } = (yield select()).directoryReducer;
+
+  // Building headers and url
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
   const params = {
@@ -30,28 +23,25 @@ export function* watchLoadContacts(action) {
   const url = `${CONFIG.API.CONTACTS}?_sort=lastName&_order=${order}&lastName_like=${search}`;
 
   const contacts = yield call(
-    fetchEndpoint,
+    fetchUrl,
     url,
     params,
   );
 
   if (isError(contacts)) {
-    // yield put(signInFailure(transaction.message));
+    yield put(loadContactsFailure(contacts));
     return;
   }
 
+  // Dispatch success and new contacts
   yield put(loadContactsSuccess());
   yield put(contactsUpdated(contacts));
+}
 
-  // console.log('>>>>>>>> contacts', contacts);
-
-  // fetch(url, params)
-  //   .then(res => res.json())
-  //   .then((data) => {
-  //     // put(loadContactsSuccess(data));
-  //     console.log('>>>>>>>> data', data);
-  //   })
-  //   .catch((err) => {
-  //     // console.log('>>>>>>>> err', err);
-  //   });
+export function* watchChangeOrder(action) {
+  const { contacts } = (yield select()).contactReducer;
+  const contactsSorted = (action.order === ORDER.DESC)
+    ? contacts.sort(sortDesc)
+    : contacts.sort(sortAsc);
+  yield put(contactsUpdated(contactsSorted));
 }

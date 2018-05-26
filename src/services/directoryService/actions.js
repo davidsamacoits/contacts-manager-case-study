@@ -7,6 +7,13 @@ export function changeTypeCard(typeCard) {
   };
 }
 
+export function changeOrder(order) {
+  return {
+    type: actionTypes.DIRECTORY_CHANGE_ORDER,
+    order,
+  };
+}
+
 export function loadContacts(order, search) {
   return {
     type: actionTypes.DIRECTORY_LOAD_CONTACTS,
