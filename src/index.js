@@ -13,7 +13,7 @@ import { routerReducer, routerMiddleware } from 'react-router-redux';
 import Routes from './nav/Routes';
 
 // Reducers
-import contactReducer from './services/contactService/reducer';
+import reducers from './globalRedux/reducers';
 
 // Sagas
 import sagas from './globalRedux/sagas';
@@ -32,7 +32,7 @@ const sagaMiddleware = createSagaMiddleware();
 /* eslint-disable no-underscore-dangle */
 const store = createStore(
   combineReducers({
-    contactReducer,
+    ...reducers,
     routerReducer,
   }),
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),

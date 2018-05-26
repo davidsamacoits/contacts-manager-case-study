@@ -1,7 +1,7 @@
 // import * as actionTypes from './actionTypes';
 
 export const initialState = () => ({
-  contacts: { hello: 'TEST' },
+  contacts: {},
 });
 
 export default (state = initialState(), action) => {
