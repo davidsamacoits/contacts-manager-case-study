@@ -25,6 +25,7 @@ const propTypes = {
   searchContact: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
   contactDetailLoadRequest: PropTypes.func.isRequired,
+  contact: PropTypes.object.isRequired,
 };
 
 const Directory = (props) => {
@@ -40,6 +41,7 @@ const Directory = (props) => {
     searchContact,
     search,
     contactDetailLoadRequest,
+    contact,
   } = props;
 
   let currentLetter = '';
@@ -129,7 +131,8 @@ const Directory = (props) => {
       </button>
     </div>,
     <div key="panel" className={cx('sidepanel', { 'sidepanel--open': panelStatus === PANEL_STATUS.OPEN })}>
-      PANEL
+      {contact && contact.firstName}
+      {contact && contact.lastName}
     </div>,
   ]);
 };

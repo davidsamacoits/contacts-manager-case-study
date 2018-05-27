@@ -91,7 +91,8 @@
   }
 }
 .sidepanel {
-  background: $color_grey_dark;
+  background: $color_secondary;
+  color: $color_secondary_ligth;
   width: $panel_width;
   transform: translate($panel_width);
   position:fixed;

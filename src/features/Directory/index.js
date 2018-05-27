@@ -13,6 +13,7 @@ function mapStateToProps(state) {
     typeCard: state.directoryReducer.typeCard,
     panelStatus: state.directoryReducer.panelStatus,
     search: state.directoryReducer.search,
+    contact: state.contactDetailReducer.contact,
   };
 }
 
