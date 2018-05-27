@@ -31,6 +31,7 @@ $panel_width: 300px;
 // Global style
 * {
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
 }
 
 html, body {

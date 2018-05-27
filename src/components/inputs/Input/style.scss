@@ -1,0 +1,19 @@
+@import 'global.scss';
+
+.input-container {
+  background: $color_white;
+  display: flex;
+  align-items: center;
+  padding: 0 0.25em;
+  input {
+    border: none;
+    outline: 0;
+    padding: 0.65em;
+    font-weight: 500;
+    font-size: 0.8em;
+    color: $color_black;
+    &::placeholder {
+      color: $color_grey_dark;
+    }
+  }
+}

@@ -1,5 +1,6 @@
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased; }
 
 html, body {
   font-size: 16px;
@@ -15,6 +16,10 @@ html, body {
   padding: 1em;
   flex: 1;
   transition: padding 0.5s cubic-bezier(0, 0, 0.3, 1); }
+  .directory.directory--panel-open {
+    padding-right: 316px; }
+    .directory.directory--panel-open .add-contact__bt {
+      right: 300px; }
   .directory .contacts--empty {
     color: #717171; }
   .directory header {
@@ -22,30 +27,32 @@ html, body {
     justify-content: space-between;
     align-items: center;
     padding-bottom: 1em; }
-    .directory header .filters-name {
-      font-size: 0.75em;
-      font-weight: 600;
-      margin-right: 1em;
-      text-transform: uppercase;
-      color: #717171; }
-    .directory header .filters-order__btn {
-      background: #c7c7c7;
-      color: #717171;
-      border: none;
-      font-weight: 600;
-      font-size: 0.75em;
-      padding: 0.75em 1.25em;
-      outline: 0;
-      margin-right: 0.5em;
-      letter-spacing: 1px;
-      transition: color 0.25s ease-in-out, background 0.25s ease-in-out; }
-      .directory header .filters-order__btn:hover {
-        background: #ffffff;
-        color: #363636;
-        cursor: pointer; }
-      .directory header .filters-order__btn.filters-order__btn--active {
-        background: #ffffff;
-        color: #363636; }
+    .directory header .filters-container {
+      display: flex; }
+      .directory header .filters-container .filters-name {
+        font-size: 0.75em;
+        font-weight: 600;
+        margin-right: 1em;
+        text-transform: uppercase;
+        color: #717171; }
+      .directory header .filters-container .filters-order__btn {
+        background: #c7c7c7;
+        color: #717171;
+        border: none;
+        font-weight: 600;
+        font-size: 0.75em;
+        padding: 0.75em 1.25em;
+        outline: 0;
+        margin-right: 0.5em;
+        letter-spacing: 1px;
+        transition: color 0.25s ease-in-out, background 0.25s ease-in-out; }
+        .directory header .filters-container .filters-order__btn:hover {
+          background: #ffffff;
+          color: #363636;
+          cursor: pointer; }
+        .directory header .filters-container .filters-order__btn.filters-order__btn--active {
+          background: #ffffff;
+          color: #363636; }
   .directory .card-types-switch-container button {
     border: none;
     background: transparent;
@@ -75,10 +82,6 @@ html, body {
     .directory .add-contact__bt:hover {
       cursor: pointer;
       box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25); }
-  .directory.directory--panel-open {
-    padding-right: 316px; }
-    .directory.directory--panel-open .add-contact__bt {
-      right: 300px; }
 
 .sidepanel {
   background: #c7c7c7;

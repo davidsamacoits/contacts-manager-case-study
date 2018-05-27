@@ -6,10 +6,11 @@ import uniqueId from 'lodash/uniqueId';
 
 import ContactCard from '../../components/cards/ContactCard';
 import LetterDivider from '../../components/dividers/LetterDivider';
+import Input from '../../components/inputs/Input';
 
 import { CARD_TYPES } from '../../components/cards/ContactCard/constants';
 
-import { ORDER, PANEL_STATUS } from '../../constants';
+import { ORDER, PANEL_STATUS, INPUT_TYPES } from '../../constants';
 
 import './style.css';
 
@@ -22,6 +23,8 @@ const propTypes = {
   contactDeleteRequest: PropTypes.func.isRequired,
   panelStatus: PropTypes.string.isRequired,
   tooglePanel: PropTypes.func.isRequired,
+  searchContact: PropTypes.func.isRequired,
+  search: PropTypes.string.isRequired,
 };
 
 const Directory = (props) => {
@@ -34,6 +37,8 @@ const Directory = (props) => {
     contactDeleteRequest,
     panelStatus,
     tooglePanel,
+    searchContact,
+    search,
   } = props;
 
   let currentLetter = '';
@@ -59,13 +64,13 @@ const Directory = (props) => {
       className="contacts-container__card"
       type={typeCard}
       key={uniqueId(item.id)}
-      onClick={() => console.log('>>>> CLICK', item.id)}
+      onClick={() => tooglePanel()}
       onDelete={() => contactDeleteRequest(item.id)}
     />,
   ]));
 
   return ([
-    <div className={cx('directory', { 'directory--panel-open': panelStatus === PANEL_STATUS.OPEN })}>
+    <div className={cx('directory', { 'directory--panel-open': panelStatus === PANEL_STATUS.OPEN })} key="directory">
       <header>
         <div className="filters-container">
           <div className="filters-order">
@@ -81,7 +86,15 @@ const Directory = (props) => {
             >Z-A
             </button>
           </div>
-          <div className="filters-search" />
+          <Input
+            type={INPUT_TYPES.TEXT}
+            id="search-input"
+            name="search-input"
+            className="search-input"
+            placeholder="Search..."
+            onChange={e => searchContact(e.target.value)}
+            value={search}
+          />
         </div>
         <div className="card-types-switch-container">
           <button
@@ -105,15 +118,16 @@ const Directory = (props) => {
       </div>
       <button
         className="add-contact__bt"
-        onClick={() => {
-        tooglePanel();
-        console.log('>>>>> TOOGLE PANEL');
-      }}
+        onClick={() => tooglePanel()}
       >
-        <Icons.MdAdd size={38} />
+        {panelStatus === PANEL_STATUS.OPEN ? (
+          <Icons.MdClose size={38} />
+        ) : (
+          <Icons.MdAdd size={38} />
+        )}
       </button>
     </div>,
-    <div className={cx('sidepanel', { 'sidepanel--open': panelStatus === PANEL_STATUS.OPEN })}>
+    <div key="panel" className={cx('sidepanel', { 'sidepanel--open': panelStatus === PANEL_STATUS.OPEN })}>
       PANEL
     </div>,
   ]);

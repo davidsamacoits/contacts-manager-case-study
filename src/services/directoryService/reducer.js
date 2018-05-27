@@ -28,6 +28,11 @@ export default (state = initialState(), action) => {
         ...state,
         panelStatus: state.panelStatus === PANEL_STATUS.OPEN ? PANEL_STATUS.CLOSE : PANEL_STATUS.OPEN,
       };
+    case actionTypes.DIRECTORY_SEARCH:
+      return {
+        ...state,
+        search: action.search,
+      };
     default:
       return state;
   }

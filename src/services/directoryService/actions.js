@@ -19,3 +19,10 @@ export function tooglePanel() {
     type: actionTypes.DIRECTORY_TOOGLE_PANEL,
   };
 }
+
+export function searchContact(search) {
+  return {
+    type: actionTypes.DIRECTORY_SEARCH,
+    search,
+  };
+}

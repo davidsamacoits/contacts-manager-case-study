@@ -14,3 +14,8 @@ export const PANEL_STATUS = {
   OPEN: 'open',
   CLOSE: 'close',
 };
+
+export const INPUT_TYPES = {
+  TEXT: 'text',
+  PASSWORD: 'password',
+};
