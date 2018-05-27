@@ -54,3 +54,17 @@ html, body {
       color: #717171; }
   .directory .contacts-container .contacts-container__card {
     float: left; }
+  .directory .add-contact__bt {
+    background: #ed5153;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    padding: 1.5em;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    outline: 0;
+    transition: box-shadow .25s ease-in-out; }
+    .directory .add-contact__bt:hover {
+      cursor: pointer;
+      box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25); }

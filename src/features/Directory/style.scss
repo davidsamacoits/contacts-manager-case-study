@@ -60,4 +60,20 @@
       float: left;
     }
   }
+  .add-contact__bt {
+    background: $color_primary;
+    color: $color_white;
+    border: none;
+    border-radius: 50%;
+    padding: 1.5em;
+    position: fixed;
+    bottom: 1em;
+    right: 1em;
+    outline: 0;
+    transition: box-shadow .25s ease-in-out;    
+    &:hover {
+      cursor: pointer;
+      box-shadow: $card-shadow;          
+    }
+  }
 }

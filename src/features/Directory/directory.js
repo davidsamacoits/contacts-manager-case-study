@@ -99,6 +99,9 @@ const Directory = (props) => {
           <p className="contacts--empty">Oops, it is a bit empty here <span role="img" aria-label=":(">😞</span></p>
         )}
       </div>
+      <button className="add-contact__bt" onClick={() => console.log('>>>>> ADD CONTACT')}>
+        <Icons.MdAdd size={38} />
+      </button>
     </div>
   );
 };
