@@ -100,7 +100,7 @@ const Directory = (props) => {
       </header>
       <div className="contacts-container">
         {contacts.length ? renderContacts() : (
-          <p className="contacts--empty">Oops, it is a bit empty here <span role="img" aria-label=":(">😞</span></p>
+          <p className="contacts--empty">Oops, it is a bit empty here <span role="img" aria-label=":(">🙈</span></p>
         )}
       </div>
       <button
