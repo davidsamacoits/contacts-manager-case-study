@@ -19,7 +19,8 @@ html, body {
   transition: box-shadow .25s ease-in-out;
   background: transparent;
   margin: 0 1.25em 1.25em 0;
-  overflow: hidden; }
+  overflow: hidden;
+  outline: 0; }
   .contact-card.contact-card--small {
     height: 87px;
     width: auto; }
@@ -53,6 +54,15 @@ html, body {
         overflow: hidden;
         text-overflow: ellipsis;
         font-weight: 400; }
+      .contact-card .contact-card__right-block .contact-card__header .contact-card__bt-delete {
+        background: #ffffff;
+        border: none;
+        color: #e8e8e8;
+        transition: color 0.25s ease-in-out;
+        outline: 0; }
+        .contact-card .contact-card__right-block .contact-card__header .contact-card__bt-delete:hover {
+          color: #717171;
+          cursor: pointer; }
     .contact-card .contact-card__right-block .contact-card__picture {
       overflow: hidden;
       width: 100%;

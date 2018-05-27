@@ -12,6 +12,7 @@
     background: transparent;
     margin: 0 $card-space-between $card-space-between 0;
     overflow: hidden;
+    outline: 0;
     &.contact-card--small {
       height: $card-avatar-heigth - 1;
       width: auto;
@@ -49,6 +50,17 @@
           overflow: hidden;
           text-overflow: ellipsis;
           font-weight: 400;
+        }
+        .contact-card__bt-delete {
+          background: $color_white;
+          border: none;
+          color: $color_grey;
+          transition: color 0.25s ease-in-out;
+          outline: 0;          
+          &:hover {
+            color: $color_grey_darker;
+            cursor: pointer;
+          }
         }
       }
       .contact-card__picture {
