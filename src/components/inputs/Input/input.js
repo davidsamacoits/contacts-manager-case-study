@@ -12,6 +12,7 @@ const propTypes = {
   className: PropTypes.string,
   placeholder: PropTypes.string,
   onChange: PropTypes.func,
+  label: PropTypes.string,
 };
 
 const defaultProps = {
@@ -20,6 +21,7 @@ const defaultProps = {
   name: null,
   value: '',
   onChange: () => {},
+  label: '',
 };
 
 const Input = (props) => {
@@ -31,18 +33,30 @@ const Input = (props) => {
     className,
     placeholder,
     onChange,
+    label,
   } = props;
+
+  const inputToRender = () => (
+    <input
+      type={type}
+      name={name}
+      id={id}
+      className={cx('input', className)}
+      placeholder={placeholder}
+      value={value}
+      onChange={onChange}
+    />
+  );
   return (
     <div className="input-container">
-      <input
-        type={type}
-        name={name}
-        id={id}
-        className={cx('input', className)}
-        placeholder={placeholder}
-        value={value}
-        onChange={onChange}
-      />
+      {label ? (
+        <label htmlFor={id}>
+          <span className="label">{ label }</span>
+          {inputToRender()}
+        </label>
+      ) : (
+        inputToRender()
+      )}
     </div>
   );
 };

@@ -1,0 +1,23 @@
+@import 'global.scss';
+
+.sidepanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow-y: auto;
+  .panel-picture-container {
+    width: $panel_width/2;
+    height: $panel_width/2;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.25em;
+    .panel-picture {
+      width: auto;
+      height: 100%;
+    }
+  }
+}

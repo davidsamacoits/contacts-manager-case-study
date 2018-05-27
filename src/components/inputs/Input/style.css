@@ -13,12 +13,12 @@ html, body {
   display: flex; }
 
 .input-container {
-  background: #ffffff;
   display: flex;
-  align-items: center;
-  padding: 0 0.25em; }
+  align-items: center; }
   .input-container input {
+    background: #ffffff;
     border: none;
+    height: 100%;
     outline: 0;
     padding: 0.65em;
     font-weight: 500;

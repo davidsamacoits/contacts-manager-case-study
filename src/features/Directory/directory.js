@@ -6,6 +6,7 @@ import * as Icons from 'react-icons/lib/md';
 import ContactCard from '../../components/cards/ContactCard';
 import LetterDivider from '../../components/dividers/LetterDivider';
 import Input from '../../components/inputs/Input';
+import Panel from '../../components/layouts/Panel';
 
 import { CARD_TYPES } from '../../components/cards/ContactCard/constants';
 
@@ -130,10 +131,11 @@ const Directory = (props) => {
         )}
       </button>
     </div>,
-    <div key="panel" className={cx('sidepanel', { 'sidepanel--open': panelStatus === PANEL_STATUS.OPEN })}>
-      {contact && contact.firstName}
-      {contact && contact.lastName}
-    </div>,
+    <Panel
+      contact={contact}
+      key="panel"
+      className={cx({ 'sidepanel--open': panelStatus === PANEL_STATUS.OPEN })}
+    />,
   ]);
 };
 

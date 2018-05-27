@@ -1,0 +1,60 @@
+@import 'global.scss';
+
+.contact-form {
+  width: 100%;
+  text-align: center;
+  .input-container {
+    margin: 1.25em;
+    label {
+      width: 100%;
+      span.label {
+        display: block;
+        margin-bottom: 0.25em;
+        font-size: 0.75em;
+        font-weight: 500;
+        text-align: left;
+      }
+    }
+    input {
+      width: 100%;
+      background-color: transparent;
+      border-bottom: 1px solid $color_secondary_ligth;
+      color: $color_secondary_ligth;
+      font-size: 1em;
+      padding: 0.25em 0.25em 0.4em;
+      transition: border-color 0.25s ease-in-out, color 0.25s ease-in-out;
+      &:focus {
+        border-color: $color_white;
+        color: $color_white;
+      }
+      &::placeholder {
+        color: $color_secondary_ligth;
+        opacity: 0.5;
+      }
+      &:-webkit-autofill {
+        box-shadow: 0 0 0 30px $color_secondary inset;
+        -webkit-text-fill-color: $color_secondary_ligth !important;
+      }
+    }
+  }
+  .contact-form__submit {
+    border: none;
+    background: $color_primary;
+    color: $color_white;
+    font-size: 0.85em;
+    font-weight: 700;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    outline: 0;
+    padding: 0.75em 1.75em;
+    margin: 1em 0;
+    transition: background 0.25s ease-in-out;
+    &:hover {
+      cursor: pointer;
+      background: $color_primary_ligth;
+    }
+    svg {
+      margin-right: 0.5em;
+    }
+  }
+}
