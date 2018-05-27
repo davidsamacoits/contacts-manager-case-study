@@ -9,7 +9,7 @@ import LetterDivider from '../../components/dividers/LetterDivider';
 
 import { CARD_TYPES } from '../../components/cards/ContactCard/constants';
 
-import { ORDER } from '../../constants';
+import { ORDER, PANEL_STATUS } from '../../constants';
 
 import './style.css';
 
@@ -20,6 +20,8 @@ const propTypes = {
   changeTypeCard: PropTypes.func.isRequired,
   changeOrder: PropTypes.func.isRequired,
   contactDeleteRequest: PropTypes.func.isRequired,
+  panelStatus: PropTypes.string.isRequired,
+  tooglePanel: PropTypes.func.isRequired,
 };
 
 const Directory = (props) => {
@@ -30,6 +32,8 @@ const Directory = (props) => {
     changeTypeCard,
     changeOrder,
     contactDeleteRequest,
+    panelStatus,
+    tooglePanel,
   } = props;
 
   let currentLetter = '';
@@ -60,8 +64,8 @@ const Directory = (props) => {
     />,
   ]));
 
-  return (
-    <div className="directory">
+  return ([
+    <div className={cx('directory', { 'directory--panel-open': panelStatus === PANEL_STATUS.OPEN })}>
       <header>
         <div className="filters-container">
           <div className="filters-order">
@@ -99,11 +103,20 @@ const Directory = (props) => {
           <p className="contacts--empty">Oops, it is a bit empty here <span role="img" aria-label=":(">😞</span></p>
         )}
       </div>
-      <button className="add-contact__bt" onClick={() => console.log('>>>>> ADD CONTACT')}>
+      <button
+        className="add-contact__bt"
+        onClick={() => {
+        tooglePanel();
+        console.log('>>>>> TOOGLE PANEL');
+      }}
+      >
         <Icons.MdAdd size={38} />
       </button>
-    </div>
-  );
+    </div>,
+    <div className={cx('sidepanel', { 'sidepanel--open': panelStatus === PANEL_STATUS.OPEN })}>
+      PANEL
+    </div>,
+  ]);
 };
 
 Directory.propTypes = propTypes;

@@ -8,6 +8,9 @@ html, body {
   background: #dedede;
   font-family: 'Lato', sans-serif; }
 
+#root {
+  display: flex; }
+
 .letter-divider {
   font-size: 1.25em;
   text-transform: uppercase;

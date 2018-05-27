@@ -10,19 +10,19 @@
     text-align: left;
     transition: box-shadow .25s ease-in-out;
     background: transparent;
-    margin: 0 $card-space-between $card-space-between 0;
+    margin: 0 $card_space_between $card_space_between 0;
     overflow: hidden;
     outline: 0;
     &.contact-card--small {
-      height: $card-avatar-heigth - 1;
+      height: $card_avatar_heigth - 1;
       width: auto;
     }
     &:hover {
       cursor: pointer;
-      box-shadow: $card-shadow;
+      box-shadow: $card_shadow;
     }
     .contact-card__avatar img {
-      height: $card-avatar-heigth;
+      height: $card_avatar_heigth;
       width: auto;
       display: block;
     }

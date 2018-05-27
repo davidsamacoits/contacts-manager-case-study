@@ -13,3 +13,9 @@ export function changeOrder(order) {
     order,
   };
 }
+
+export function tooglePanel() {
+  return {
+    type: actionTypes.DIRECTORY_TOOGLE_PANEL,
+  };
+}

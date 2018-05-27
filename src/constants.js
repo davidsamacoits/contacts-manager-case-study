@@ -9,3 +9,8 @@ export const HTTP_METHODS = {
   DELETE: 'DELETE',
   PUT: 'PUT',
 };
+
+export const PANEL_STATUS = {
+  OPEN: 'open',
+  CLOSE: 'close',
+};

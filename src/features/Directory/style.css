@@ -8,8 +8,13 @@ html, body {
   background: #dedede;
   font-family: 'Lato', sans-serif; }
 
+#root {
+  display: flex; }
+
 .directory {
-  padding: 1em; }
+  padding: 1em;
+  flex: 1;
+  transition: padding 0.5s cubic-bezier(0, 0, 0.3, 1); }
   .directory .contacts--empty {
     color: #717171; }
   .directory header {
@@ -61,10 +66,27 @@ html, body {
     border-radius: 50%;
     padding: 1.5em;
     position: fixed;
-    bottom: 1em;
-    right: 1em;
+    bottom: 0;
+    right: 0;
     outline: 0;
-    transition: box-shadow .25s ease-in-out; }
+    margin-right: 2.5em;
+    margin-bottom: 2.5em;
+    transition: box-shadow 0.25s ease-in-out, right 0.5s cubic-bezier(0, 0, 0.3, 1); }
     .directory .add-contact__bt:hover {
       cursor: pointer;
       box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.25); }
+  .directory.directory--panel-open {
+    padding-right: 316px; }
+    .directory.directory--panel-open .add-contact__bt {
+      right: 300px; }
+
+.sidepanel {
+  background: #c7c7c7;
+  width: 300px;
+  transform: translate(300px);
+  position: fixed;
+  right: 0;
+  height: 100%;
+  transition: transform 0.5s cubic-bezier(0, 0, 0.3, 1); }
+  .sidepanel.sidepanel--open {
+    transform: translate(0); }

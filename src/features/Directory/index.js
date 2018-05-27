@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 
 import Directory from './directory';
 
-import { changeTypeCard, changeOrder } from '../../services/directoryService/actions';
+import { changeTypeCard, changeOrder, tooglePanel } from '../../services/directoryService/actions';
 import { contactDeleteRequest } from '../../services/contactService/actions';
 
 function mapStateToProps(state) {
@@ -10,6 +10,7 @@ function mapStateToProps(state) {
     contacts: state.contactReducer.contacts,
     order: state.directoryReducer.order,
     typeCard: state.directoryReducer.typeCard,
+    panelStatus: state.directoryReducer.panelStatus,
   };
 }
 
@@ -17,4 +18,5 @@ export default connect(mapStateToProps, {
   changeTypeCard: type => changeTypeCard(type),
   changeOrder: order => changeOrder(order),
   contactDeleteRequest: id => contactDeleteRequest(id),
+  tooglePanel: () => tooglePanel(),
 })(Directory);
