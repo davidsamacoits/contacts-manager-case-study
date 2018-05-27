@@ -99,6 +99,36 @@
       "phoneWork": "367-422-6532",
       "email": "jeffrey@kam.com",
       "picture": "https://tinyfac.es/data/avatars/852EC6E1-347C-4187-9D42-DF264CCF17BF.jpeg"
+    },
+    {
+      "id": "Udc497e8ad4285ce60a1",
+      "firstName": "Sasha",
+      "lastName": "Ho",
+      "jobTitle": "Manager",
+      "phoneHome": "433-454-7654",
+      "phoneWork": "367-422-3324",
+      "email": "sasha@ho.com",
+      "picture": "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&h=950"
+    },
+    {
+      "id": "U35db1fe6df10ae185a2",
+      "firstName": "Josepha",
+      "lastName": "Garner",
+      "jobTitle": "Designer",
+      "phoneHome": "433-443-6565",
+      "phoneWork": "543-422-3324",
+      "email": "josepha@garner.com",
+      "picture": "https://images.unsplash.com/photo-1476493279419-b785d41e38d8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=4920987ab334960a4d39b9db70555ef5&auto=format&fit=crop&w=2250&q=80"
+    },
+    {
+      "id": "U35db1fe6df10ae185a2",
+      "firstName": "Ayo",
+      "lastName": "Ogunseinde",
+      "jobTitle": "Developer",
+      "phoneHome": "331-443-2174",
+      "phoneWork": "543-134-3324",
+      "email": "ayo@ogunseinde.com",
+      "picture": "https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=afb35d2683e102d67bcd70b87b100723&auto=format&fit=crop&w=2250&q=80"
     }
   ]
 }
