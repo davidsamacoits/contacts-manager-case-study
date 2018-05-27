@@ -17,6 +17,9 @@ Simple contacts manager application case study
 ✅ Create components (directory, cards, detail...)  
 ✅ Set up directory page    
 ⬜️ Add fiters (A-Z, Z-A and search by name)    
+✅ Delete contact    
+⬜️ Add contact    
+⬜️ Edit contact    
 ⬜️ Write unit tests  
 ⬜️ Add animations and transitions  
 ⬜️ Handle unavailable API
