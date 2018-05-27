@@ -14,6 +14,8 @@ import {
   contatsLoadRequest,
 } from './actions';
 
+import { openPanel } from '../directoryService/actions';
+
 export function* watchContactsLoadRequest(action) {
   // Building headers and url
   const headers = new Headers();
@@ -61,4 +63,36 @@ export function* watchContactDeleteRequest(action) {
   const { order, search } = (yield select()).directoryReducer;
   yield put(contactDeleteSuccess());
   yield put(contatsLoadRequest(order, search));
+}
+
+export function* watchContactDetailLoadRequest(action) {
+  console.log('>>>>>>>> action', action);
+
+  // Building headers and url
+  const headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+  headers.append('cache-control', 'no-cache');
+  const params = {
+    method: HTTP_METHODS.GET,
+    headers,
+  };
+  const url = `${CONFIG.API.CONTACTS}${action.id}`;
+  const contactDetail = yield call(
+    fetchUrl,
+    url,
+    params,
+  );
+
+  console.log('>>>>>>>> contactDetail', contactDetail);
+
+  // Dispatch error if needed
+  if (isError(contactDetail)) {
+    // yield put(contactDetailLoadFailure(contactDetail));
+
+  }
+
+  // Open panel for edition / detail
+  yield put(openPanel());
+  // Dispatch success and new contacts
+  // yield put(contactDetailLoadSuccess(contactDetail));
 }

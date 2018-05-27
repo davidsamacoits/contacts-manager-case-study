@@ -48,3 +48,10 @@ export function contactsLoadFailure(error) {
     error,
   };
 }
+
+export function contactDetailLoadRequest(id) {
+  return {
+    type: actionTypes.CONTACT_DETAIL_LOAD_REQUEST,
+    id,
+  };
+}

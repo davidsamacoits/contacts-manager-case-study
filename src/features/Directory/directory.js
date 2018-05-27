@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 import * as Icons from 'react-icons/lib/md';
-import uniqueId from 'lodash/uniqueId';
 
 import ContactCard from '../../components/cards/ContactCard';
 import LetterDivider from '../../components/dividers/LetterDivider';
@@ -25,6 +24,7 @@ const propTypes = {
   tooglePanel: PropTypes.func.isRequired,
   searchContact: PropTypes.func.isRequired,
   search: PropTypes.string.isRequired,
+  contactDetailLoadRequest: PropTypes.func.isRequired,
 };
 
 const Directory = (props) => {
@@ -39,6 +39,7 @@ const Directory = (props) => {
     tooglePanel,
     searchContact,
     search,
+    contactDetailLoadRequest,
   } = props;
 
   let currentLetter = '';
@@ -47,7 +48,7 @@ const Directory = (props) => {
     if (letter !== currentLetter) {
       currentLetter = letter;
       return (
-        <LetterDivider letter={currentLetter} key={uniqueId(currentLetter)} />
+        <LetterDivider letter={currentLetter} key={currentLetter} />
       );
     }
     return null;
@@ -63,8 +64,8 @@ const Directory = (props) => {
       jobTitle={item.jobTitle}
       className="contacts-container__card"
       type={typeCard}
-      key={uniqueId(item.id)}
-      onClick={() => tooglePanel()}
+      key={item.id}
+      onClick={() => contactDetailLoadRequest(item.id)}
       onDelete={() => contactDeleteRequest(item.id)}
     />,
   ]));
@@ -112,7 +113,7 @@ const Directory = (props) => {
         </div>
       </header>
       <div className="contacts-container">
-        {contacts.length ? renderContacts() : (
+        {contacts && contacts.length ? renderContacts() : (
           <p className="contacts--empty">Oops, it is a bit empty here <span role="img" aria-label=":(">🙈</span></p>
         )}
       </div>

@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Simple contacts manager application case study
+With this case study I intented to showcase some of my skills and knowledge by building a contacts management app in a couple days. Therefore, some of my technological choices aren't the most simple nor the most optimized ones. 
 
 ## Roadmap
 
@@ -62,3 +62,9 @@ $ json-server contacts.json --port 3004
 $ npm i && npm start
 ```
 6. Enjoy! 😎
+
+## What's next?
+
+With more time I could have added the following features:  
+⬜️ -  
+⬜️ -  

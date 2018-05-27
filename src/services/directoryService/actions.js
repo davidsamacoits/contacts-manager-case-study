@@ -20,9 +20,16 @@ export function tooglePanel() {
   };
 }
 
+export function openPanel() {
+  return {
+    type: actionTypes.DIRECTORY_OPEN_PANEL,
+  };
+}
+
 export function searchContact(search) {
   return {
     type: actionTypes.DIRECTORY_SEARCH,
     search,
   };
 }
+
