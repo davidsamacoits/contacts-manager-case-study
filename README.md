@@ -17,7 +17,7 @@ Simple contacts manager application case study
 ✅ Create components (directory, cards, detail...)  
 ✅ Set up directory page    
 ✅ Create panel for creation and edition   
-⬜️ Add fiters (A-Z, Z-A and search by name)    
+✅ Add fiters (A-Z, Z-A and search by name)    
 ✅ Delete contact    
 ⬜️ Add contact    
 ⬜️ Edit contact    
