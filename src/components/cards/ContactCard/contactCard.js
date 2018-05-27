@@ -51,8 +51,8 @@ const ContactCard = (props) => {
     <div
       id={id}
       className={cx(className, 'contact-card', { 'contact-card--small': type === CARD_TYPES.SMALL })}
-      onClick={onClick()}
-      onKeyPress={onClick()}
+      onClick={() => onClick()}
+      onKeyPress={() => onClick()}
       role="button"
       tabIndex={0}
     >

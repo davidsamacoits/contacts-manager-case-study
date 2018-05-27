@@ -2,6 +2,9 @@
 
 .directory {
   padding: 1em;
+  .contacts--empty {
+    color: $color_grey_darker;
+  }
   header {
     display: flex;
     justify-content: space-between;

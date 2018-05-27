@@ -18,6 +18,7 @@ export function* watchContactsLoadRequest(action) {
   // Building headers and url
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
+  headers.append('cache-control', 'no-cache');
   const params = {
     method: HTTP_METHODS.GET,
     headers,
@@ -28,7 +29,7 @@ export function* watchContactsLoadRequest(action) {
     url,
     params,
   );
-  // Dispatch error id needed
+  // Dispatch error if needed
   if (isError(contacts)) {
     yield put(contactsLoadFailure(contacts));
     return;
@@ -46,18 +47,18 @@ export function* watchContactDeleteRequest(action) {
     headers,
   };
   const url = `${CONFIG.API.CONTACTS}${action.id}`;
-  const contacts = yield call(
+  const response = yield call(
     fetchUrl,
     url,
     params,
   );
-  // Dispatch error id needed
-  if (isError(contacts)) {
-    yield put(contactDeleteFailure(contacts));
+  // Dispatch error if needed
+  if (isError(response)) {
+    yield put(contactDeleteFailure(response));
     return;
   }
   // Dispatch success and fetch contacts to ensure sync w/ backend
-  const { order, search } = (yield select()).directoryService;
+  const { order, search } = (yield select()).directoryReducer;
   yield put(contactDeleteSuccess());
   yield put(contatsLoadRequest(order, search));
 }

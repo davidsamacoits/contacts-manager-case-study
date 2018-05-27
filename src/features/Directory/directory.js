@@ -19,6 +19,7 @@ const propTypes = {
   typeCard: PropTypes.string.isRequired,
   changeTypeCard: PropTypes.func.isRequired,
   changeOrder: PropTypes.func.isRequired,
+  contactDeleteRequest: PropTypes.func.isRequired,
 };
 
 const Directory = (props) => {
@@ -28,6 +29,7 @@ const Directory = (props) => {
     typeCard,
     changeTypeCard,
     changeOrder,
+    contactDeleteRequest,
   } = props;
 
   let currentLetter = '';
@@ -53,6 +55,8 @@ const Directory = (props) => {
       className="contacts-container__card"
       type={typeCard}
       key={uniqueId(item.id)}
+      onClick={() => console.log('>>>> CLICK', item.id)}
+      onDelete={() => contactDeleteRequest(item.id)}
     />,
   ]));
 
@@ -91,7 +95,9 @@ const Directory = (props) => {
         </div>
       </header>
       <div className="contacts-container">
-        {renderContacts()}
+        {contacts.length ? renderContacts() : (
+          <p className="contacts--empty">Oops, it is a bit empty here <span role="img" aria-label=":(">😞</span></p>
+        )}
       </div>
     </div>
   );
