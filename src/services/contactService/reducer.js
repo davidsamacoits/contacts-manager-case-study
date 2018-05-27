@@ -46,21 +46,6 @@ export default (state = initialState(), action) => {
         isLoading: false,
         error: action.error,
       };
-    case actionTypes.CONTACT_DETAIL_LOAD_REQUEST:
-      return {
-        ...state,
-        isLoading: true,
-      };
-    case actionTypes.CONTACT_DETAIL_LOAD_SUCCESS:
-      return {
-        ...state,
-        isLoading: false,
-      };
-    case actionTypes.CONTACT_DETAIL_LOAD_FAILURE:
-      return {
-        ...state,
-        error: action.error,
-      };
     default:
       return state;
   }

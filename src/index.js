@@ -10,7 +10,7 @@ import createHistory from 'history/createBrowserHistory';
 import { routerReducer, routerMiddleware } from 'react-router-redux';
 
 // Actions to execute when the application is loading
-import { contatsLoadRequest } from './services/contactService/actions';
+import { contactsLoadRequest } from './services/contactService/actions';
 
 // Routes
 import Routes from './nav/Routes';
@@ -46,7 +46,7 @@ sagaMiddleware.run(sagas);
 
 // Load contacts for the first time with paraneters defined in directoryReducer
 const { order, search } = store.getState().directoryReducer;
-store.dispatch(contatsLoadRequest(order, search));
+store.dispatch(contactsLoadRequest(order, search));
 
 ReactDOM.render(
   <Provider store={store}>

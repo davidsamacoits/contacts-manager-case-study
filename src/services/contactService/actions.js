@@ -27,7 +27,7 @@ export function contactDeleteFailure(error) {
   };
 }
 
-export function contatsLoadRequest(order, search) {
+export function contactsLoadRequest(order, search) {
   return {
     type: actionTypes.CONTACT_LOAD_REQUEST,
     order,
@@ -46,12 +46,5 @@ export function contactsLoadFailure(error) {
   return {
     type: actionTypes.CONTACT_LOAD_FAILURE,
     error,
-  };
-}
-
-export function contactDetailLoadRequest(id) {
-  return {
-    type: actionTypes.CONTACT_DETAIL_LOAD_REQUEST,
-    id,
   };
 }

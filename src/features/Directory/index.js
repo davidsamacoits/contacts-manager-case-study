@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import Directory from './directory';
 
 import { changeTypeCard, changeOrder, tooglePanel, searchContact } from '../../services/directoryService/actions';
-import { contactDeleteRequest, contactDetailLoadRequest } from '../../services/contactService/actions';
+import { contactDeleteRequest } from '../../services/contactService/actions';
+import { contactDetailLoadRequest } from '../../services/contactDetailService/actions';
 
 function mapStateToProps(state) {
   return {
