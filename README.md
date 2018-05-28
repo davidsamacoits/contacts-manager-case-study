@@ -31,8 +31,7 @@ Some of the packages I used for this project :
 ✅️ Edit contact    
 ⬜️ Write unit tests  
 ✅ Add animations and transitions  
-⬜️ Adding notifications boxes  
-⬜️ Handle unavailable API
+✅️ Adding notifications boxes 
 
 ## Mock server
 
