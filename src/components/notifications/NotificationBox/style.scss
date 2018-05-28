@@ -1,0 +1,22 @@
+@import 'global.scss';
+
+.notification-box {
+  display: block;
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 0.75em;
+  p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.9em;
+    font-weight: 600;
+  }
+  &.notification-box--success {
+    background: $notification_color_success_background;
+    color: $notification_color_success;
+  }
+  &.notification-box--danger {
+    background: $notification_color_danger_background;
+    color: $notification_color_danger;
+  }
+}
