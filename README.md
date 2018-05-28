@@ -4,6 +4,14 @@
 
 With this case study I intented to showcase some of my skills and knowledge by building a contacts management app in a couple days. Therefore, some of my technological choices aren't the most simple nor the most optimized ones. 
 
+Some of the packages I used for this project :
+* [React](https://github.com/facebook/react)
+* [Redux](https://github.com/reduxjs/react-redux)
+* [React Router](https://github.com/ReactTraining/react-router)
+* [Redux Saga](https://github.com/redux-saga/redux-saga)
+* [Node Sass Chokidar](https://github.com/michaelwayman/node-sass-chokidar) 
+* [JSON server](https://github.com/typicode/json-server)
+
 ## Roadmap
 
 ✅ Create git repo and README.md  
@@ -19,10 +27,11 @@ With this case study I intented to showcase some of my skills and knowledge by b
 ✅ Create panel for creation and edition   
 ✅ Add fiters (A-Z, Z-A and search by name)    
 ✅ Delete contact    
-⬜️ Add contact    
-⬜️ Edit contact    
+✅ Add contact    
+✅️ Edit contact    
 ⬜️ Write unit tests  
-⬜️ Add animations and transitions  
+✅ Add animations and transitions  
+⬜️ Adding notifications boxes  
 ⬜️ Handle unavailable API
 
 ## Mock server
@@ -63,8 +72,3 @@ $ npm i && npm start
 ```
 6. Enjoy! 😎
 
-## What's next?
-
-With more time I could have added the following features:  
-⬜️ -  
-⬜️ -  
