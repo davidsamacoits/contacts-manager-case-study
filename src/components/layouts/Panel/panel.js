@@ -21,14 +21,15 @@ const Panel = (props) => {
     contact,
     className,
   } = props;
+
   return (
     <div className={cx('sidepanel', className)}>
-      {contact && contact.picture &&
+      {contact && contact.picture && contact.id &&
         <div className="panel-picture-container">
           <img src={contact.picture} className="panel-picture" alt={`${contact.firstName} ${contact.lastName}`} />
         </div>
       }
-      <ContactForm contact={contact} />
+      <ContactForm />
     </div>
   );
 };

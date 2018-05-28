@@ -20,6 +20,12 @@ export function tooglePanel() {
   };
 }
 
+export function closePanel() {
+  return {
+    type: actionTypes.DIRECTORY_CLOSE_PANEL,
+  };
+}
+
 export function openPanel() {
   return {
     type: actionTypes.DIRECTORY_OPEN_PANEL,

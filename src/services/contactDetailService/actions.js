@@ -20,3 +20,17 @@ export function contactDetailLoadFailure(error) {
     error,
   };
 }
+
+export function updateFieldContact(field, value) {
+  return {
+    type: actionTypes.CONTACT_DETAIL_UPDATE_FIELD,
+    field,
+    value,
+  };
+}
+
+export function contactDetailReset() {
+  return {
+    type: actionTypes.CONTACT_DETAIL_RESET,
+  };
+}

@@ -1,86 +1,86 @@
 @import 'global.scss';
 
-  .contact-card {
-    width: $card_width;
-    display: flex;
-    border: none;
-    padding: 0;
-    margin: 0;
-    font-size: inherit;
-    text-align: left;
-    transition: box-shadow .25s ease-in-out;
-    background: transparent;
-    margin: 0 $card_space_between $card_space_between 0;
-    overflow: hidden;
-    outline: 0;
-    &.contact-card--small {
-      height: $card_avatar_heigth - 1;
-      width: auto;
-    }
-    &:hover {
-      cursor: pointer;
-      box-shadow: $card_shadow;
-    }
-    .contact-card__avatar img {
-      height: $card_avatar_heigth;
-      width: auto;
-      display: block;
-    }
-    .contact-card__right-block {
-      flex: 1;
-      .contact-card__header {
-        display: flex;
-        flex-direction: row;
-        .contact-card__initials {
-          background: $color_primary;  
-          color: $color_white;
-          padding: $card_header_padding;  
-          width: $card_initials_width;
-          text-align: center;
-          overflow: hidden;
-          font-weight: 600;
-          text-transform: uppercase;
-        }
-        .contact-card__name {
-          background: $color_white;
-          color: $color_secondary;
-          flex: 1;
-          padding: $card_header_padding;
-          white-space: nowrap;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          font-weight: 400;
-        }
-        .contact-card__bt-delete {
-          background: $color_white;
-          border: none;
-          margin: 0;
-          color: $color_grey;
-          transition: color 0.25s ease-in-out;
-          outline: 0;          
-          &:hover {
-            color: $color_grey_darker;
-            cursor: pointer;
-          }
-        }
-      }
-      .contact-card__picture {
+.contact-card {
+  width: $card_width;
+  display: flex;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-size: inherit;
+  text-align: left;
+  transition: box-shadow .25s ease-in-out;
+  background: transparent;
+  margin: 0 $card_space_between $card_space_between 0;
+  overflow: hidden;
+  outline: 0;
+  &.contact-card--small {
+    height: $card_avatar_heigth - 1;
+    width: auto;
+  }
+  &:hover {
+    cursor: pointer;
+    box-shadow: $card_shadow;
+  }
+  .contact-card__avatar img {
+    height: $card_avatar_heigth;
+    width: auto;
+    display: block;
+  }
+  .contact-card__right-block {
+    flex: 1;
+    .contact-card__header {
+      display: flex;
+      flex-direction: row;
+      .contact-card__initials {
+        background: $color_primary;  
+        color: $color_white;
+        padding: $card_header_padding;  
+        width: $card_initials_width;
+        text-align: center;
         overflow: hidden;
-        width: 100%;
-        height: $card_image_height;
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center center;
+        font-weight: 600;
+        text-transform: uppercase;
       }
-      .contact-card__footer {
+      .contact-card__name {
+        background: $color_white;
+        color: $color_secondary;
+        flex: 1;
+        padding: $card_header_padding;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        background: $color_secondary;
-        color: $color_secondary_ligth;
-        padding: $card_footer_padding;
-        font-weight: 500;
-        letter-spacing: -0.5px;
+        font-weight: 400;
+      }
+      .contact-card__bt-delete {
+        background: $color_white;
+        border: none;
+        margin: 0;
+        color: $color_grey;
+        transition: color 0.25s ease-in-out;
+        outline: 0;          
+        &:hover {
+          color: $color_grey_darker;
+          cursor: pointer;
+        }
       }
     }
+    .contact-card__picture {
+      overflow: hidden;
+      width: 100%;
+      height: $card_image_height;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+    }
+    .contact-card__footer {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      background: $color_secondary;
+      color: $color_secondary_ligth;
+      padding: $card_footer_padding;
+      font-weight: 500;
+      letter-spacing: -0.5px;
+    }
   }
+}

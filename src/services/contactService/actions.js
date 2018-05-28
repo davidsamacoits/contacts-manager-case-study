@@ -7,6 +7,12 @@ export function contactsUpdated(contacts) {
   };
 }
 
+export function contactSubmitted() {
+  return {
+    type: actionTypes.CONTACT_SUBMITTED,
+  };
+}
+
 export function contactDeleteRequest(id) {
   return {
     type: actionTypes.CONTACT_DELETE_REQUEST,

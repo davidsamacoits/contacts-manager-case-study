@@ -45,6 +45,7 @@ const Input = (props) => {
       placeholder={placeholder}
       value={value}
       onChange={onChange}
+      autoComplete="off"
     />
   );
   return (

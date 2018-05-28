@@ -27,6 +27,7 @@ const propTypes = {
   search: PropTypes.string.isRequired,
   contactDetailLoadRequest: PropTypes.func.isRequired,
   contact: PropTypes.object.isRequired,
+  contactDetailReset: PropTypes.func.isRequired,
 };
 
 const Directory = (props) => {
@@ -43,9 +44,18 @@ const Directory = (props) => {
     search,
     contactDetailLoadRequest,
     contact,
+    contactDetailReset,
   } = props;
 
   let currentLetter = '';
+
+  const openSidePanel = () => {
+    // Forcing empty contact detail before opening it
+    if (panelStatus === PANEL_STATUS.CLOSE) {
+      contactDetailReset();
+    }
+    tooglePanel();
+  };
 
   const renderLetterDivider = (letter) => {
     if (letter !== currentLetter) {
@@ -122,7 +132,7 @@ const Directory = (props) => {
       </div>
       <button
         className="add-contact__bt"
-        onClick={() => tooglePanel()}
+        onClick={() => openSidePanel()}
       >
         {panelStatus === PANEL_STATUS.OPEN ? (
           <Icons.MdClose size={38} />
