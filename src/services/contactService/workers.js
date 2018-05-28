@@ -7,6 +7,8 @@ import { guid } from '../../utils/helpers';
 import { CONFIG } from '../../config';
 import { HTTP_METHODS } from '../../constants';
 
+import { isFormValid } from './formSchema';
+
 import {
   contactsLoadRequest,
   contactsLoadSuccess,
@@ -14,6 +16,8 @@ import {
   contactDeleteSuccess,
   contactDeleteFailure,
 } from './actions';
+
+import { contactDetailFormError } from '../contactDetailService/actions';
 
 import { closePanel } from '../directoryService/actions';
 
@@ -69,39 +73,45 @@ export function* watchContactDeleteRequest(action) {
 export function* watchContactSubmitted() {
   // Get contact from contactDetailReducer
   const { contact } = (yield select()).contactDetailReducer;
+  const formValidation = yield call(isFormValid, contact);
+  // Form is valid
+  if (formValidation) {
   // Building headers and url
-  const headers = new Headers();
-  headers.append('Content-Type', 'application/json');
-  let params = {};
-  let url = '';
-  // If we have an ID we edit the contact, otherwise we create it
-  if (contact && contact.id) {
-    params = {
-      method: HTTP_METHODS.PUT,
-      headers,
-      body: JSON.stringify(contact),
-    };
-    url = `${CONFIG.API.CONTACTS}${contact.id}`;
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    let params = {};
+    let url = '';
+    // If we have an ID we edit the contact, otherwise we create it
+    if (contact && contact.id) {
+      params = {
+        method: HTTP_METHODS.PUT,
+        headers,
+        body: JSON.stringify(contact),
+      };
+      url = `${CONFIG.API.CONTACTS}${contact.id}`;
+    } else {
+      params = {
+        method: HTTP_METHODS.POST,
+        headers,
+        body: JSON.stringify({ ...contact, id: guid() }),
+      };
+      url = `${CONFIG.API.CONTACTS}`;
+    }
+    const response = yield call(
+      fetchUrl,
+      url,
+      params,
+    );
+    // Dispatch error if needed
+    if (isError(response)) {
+      yield put(contactDetailFormError());
+      return;
+    }
+    // We reload the list and close the panel
+    const { order, search } = (yield select()).directoryReducer;
+    yield put(closePanel());
+    yield put(contactsLoadRequest(order, search));
   } else {
-    params = {
-      method: HTTP_METHODS.POST,
-      headers,
-      body: JSON.stringify({ ...contact, id: guid() }),
-    };
-    url = `${CONFIG.API.CONTACTS}`;
+    yield put(contactDetailFormError());
   }
-  const response = yield call(
-    fetchUrl,
-    url,
-    params,
-  );
-  // Dispatch error if needed
-  if (isError(response)) {
-    // yield put(contactDeleteFailure(response));
-    return;
-  }
-  // We reload the list and close the panel
-  const { order, search } = (yield select()).directoryReducer;
-  yield put(closePanel());
-  yield put(contactsLoadRequest(order, search));
 }

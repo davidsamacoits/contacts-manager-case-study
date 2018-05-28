@@ -7,6 +7,7 @@ import ContactCard from '../../components/cards/ContactCard';
 import LetterDivider from '../../components/dividers/LetterDivider';
 import Input from '../../components/inputs/Input';
 import Panel from '../../components/layouts/Panel';
+import NotificationBox from '../../components/notifications/NotificationBox';
 
 import { CARD_TYPES } from '../../components/cards/ContactCard/constants';
 

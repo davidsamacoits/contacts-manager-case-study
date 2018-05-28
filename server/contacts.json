@@ -169,6 +169,16 @@
       "email": "joshua@mcnair.com",
       "picture": "https://images.unsplash.com/photo-1476900966873-ab290e38e3f7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=c8c6f5df72e57255c3d6221101d0b002&auto=format&fit=crop&w=2250&q=80",
       "id": "U0939e3c72e16e2d8e29"
+    },
+    {
+      "firstName": "Yarely",
+      "lastName": "Barr",
+      "jobTitle": "Analyst",
+      "phoneHome": "514-377-9786",
+      "phoneWork": "613-973-9722",
+      "email": "yarely@barr.com",
+      "picture": "https://images.unsplash.com/photo-1485960994840-902a67e187c8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0577c246d091415fa44a2a047f910f52&auto=format&fit=crop&w=2255&q=80",
+      "id": "U6d2bfb7abff0b06e07c"
     }
   ]
 }

@@ -21,6 +21,12 @@ export function contactDetailLoadFailure(error) {
   };
 }
 
+export function contactDetailFormError() {
+  return {
+    type: actionTypes.CONTACT_DETAIL_ERROR_FORM,
+  };
+}
+
 export function updateFieldContact(field, value) {
   return {
     type: actionTypes.CONTACT_DETAIL_UPDATE_FIELD,

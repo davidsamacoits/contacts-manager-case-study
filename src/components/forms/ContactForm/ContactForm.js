@@ -5,10 +5,14 @@ import * as Icons from 'react-icons/lib/md';
 import Input from '../../inputs/Input';
 
 import './style.css';
+import NotificationBox from '../../notifications/NotificationBox';
+
+import { NOTIFICATION_TYPES } from '../../notifications/NotificationBox/constants';
 
 const propTypes = {
   contactSubmitted: PropTypes.func.isRequired,
   updateFieldContact: PropTypes.func.isRequired,
+  error: PropTypes.string.isRequired,
   contact: PropTypes.object,
 };
 
@@ -21,6 +25,7 @@ const ContactForm = (props) => {
     updateFieldContact,
     contactSubmitted,
     contact,
+    error,
   } = props;
 
   const onSubmit = (e) => {
@@ -30,6 +35,9 @@ const ContactForm = (props) => {
 
   return (
     <form className="contact-form" onSubmit={e => onSubmit(e)}>
+      {error &&
+        <NotificationBox type={NOTIFICATION_TYPES.DANGER} />
+      }
       <Input
         type="text"
         id="firstName"

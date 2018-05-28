@@ -29,6 +29,11 @@ export default (state = initialState(), action) => {
         ...state,
         contact: { ...state.contact, [action.field]: action.value },
       };
+    case actionTypes.CONTACT_DETAIL_ERROR_FORM:
+      return {
+        ...state,
+        error: true,
+      };
     case actionTypes.CONTACT_DETAIL_RESET:
       return initialState();
     default:

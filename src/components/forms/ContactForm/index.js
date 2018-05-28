@@ -8,6 +8,7 @@ import { contactSubmitted } from '../../../services/contactService/actions';
 function mapStateToProps(state) {
   return {
     contact: state.contactDetailReducer.contact,
+    error: state.contactDetailReducer.error,
   };
 }
 

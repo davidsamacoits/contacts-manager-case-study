@@ -72,6 +72,7 @@ html, body {
       overflow: hidden;
       width: 100%;
       height: 175px;
+      background-color: #c7c7c7;
       background-repeat: no-repeat;
       background-size: cover;
       background-position: center center; }
