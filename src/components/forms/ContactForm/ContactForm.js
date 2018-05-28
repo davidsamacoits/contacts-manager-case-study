@@ -36,7 +36,7 @@ const ContactForm = (props) => {
   return (
     <form className="contact-form" onSubmit={e => onSubmit(e)}>
       {error &&
-        <NotificationBox type={NOTIFICATION_TYPES.DANGER} />
+        <NotificationBox type={NOTIFICATION_TYPES.DANGER} content={error} />
       }
       <Input
         type="text"

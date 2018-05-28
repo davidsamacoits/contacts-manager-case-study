@@ -21,9 +21,10 @@ export function contactDetailLoadFailure(error) {
   };
 }
 
-export function contactDetailFormError() {
+export function contactDetailFormError(error) {
   return {
     type: actionTypes.CONTACT_DETAIL_ERROR_FORM,
+    error,
   };
 }
 

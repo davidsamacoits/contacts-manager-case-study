@@ -104,7 +104,7 @@ export function* watchContactSubmitted() {
     );
     // Dispatch error if needed
     if (isError(response)) {
-      yield put(contactDetailFormError());
+      yield put(contactDetailFormError('An error occured. Please try again.'));
       return;
     }
     // We reload the list and close the panel
@@ -112,6 +112,6 @@ export function* watchContactSubmitted() {
     yield put(closePanel());
     yield put(contactsLoadRequest(order, search));
   } else {
-    yield put(contactDetailFormError());
+    yield put(contactDetailFormError('All fields are required. Please try again.'));
   }
 }

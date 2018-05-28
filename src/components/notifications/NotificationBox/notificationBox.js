@@ -9,15 +9,18 @@ import './style.css';
 
 const propTypes = {
   type: PropTypes.string,
+  content: PropTypes.string,
 };
 
 const defaultProps = {
   type: NOTIFICATION_TYPES.SUCCESS,
+  content: '',
 };
 
 const NotificationBox = (props) => {
   const {
     type,
+    content,
   } = props;
   return (
     <div className={cx(
@@ -27,10 +30,10 @@ const NotificationBox = (props) => {
       )}
     >
       {type === NOTIFICATION_TYPES.SUCCESS &&
-        <p><Icons.MdCheck size={16} /> All set, you're good to go</p>
+        <p><Icons.MdCheck size={16} /> {content}</p>
       }
       {type === NOTIFICATION_TYPES.DANGER &&
-        <p><Icons.MdClose size={16} /> Oops something went wrong, please try again</p>
+        <p><Icons.MdClose size={16} /> {content}</p>
       }
     </div>
   );

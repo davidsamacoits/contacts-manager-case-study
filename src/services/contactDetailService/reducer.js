@@ -12,6 +12,7 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         isLoading: true,
+        error: '',
       };
     case actionTypes.CONTACT_DETAIL_LOAD_SUCCESS:
       return {
@@ -32,7 +33,7 @@ export default (state = initialState(), action) => {
     case actionTypes.CONTACT_DETAIL_ERROR_FORM:
       return {
         ...state,
-        error: true,
+        error: action.error,
       };
     case actionTypes.CONTACT_DETAIL_RESET:
       return initialState();
