@@ -4,7 +4,7 @@
 
 With this case study I intented to showcase some of my skills and knowledge by building a contacts management app in a couple days. Therefore, some of my technological choices aren't the most simple nor the most optimized ones. 
 
-(https://github.com/davidsamacoits/contacts-manager-case-study/blob/master/screenshot.png "Screenshot")
+![screenshot](https://github.com/davidsamacoits/contacts-manager-case-study/blob/master/screenshot.png "Screenshot")
 
 Some of the packages I used for this project :
 * [React](https://github.com/facebook/react)
