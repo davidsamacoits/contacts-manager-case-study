@@ -11,6 +11,8 @@ import {
   closePanel,
   openPanel,
   searchContact,
+  notify,
+  resetNotification,
 } from '../actions';
 
 testReducer(contactDetailServiceReducer)
@@ -20,6 +22,7 @@ testReducer(contactDetailServiceReducer)
     order: ORDER.ASC,
     search: '',
     error: '',
+    notification: '',
     panelStatus: PANEL_STATUS.CLOSE,
   });
 
@@ -74,4 +77,18 @@ testReducer(contactDetailServiceReducer)
   .on(searchContact('search'))
   .expectDiff({
     search: 'search',
+  });
+
+testReducer(contactDetailServiceReducer)
+  .withAnyState()
+  .on(notify('notification'))
+  .expectDiff({
+    notification: 'notification',
+  });
+
+testReducer(contactDetailServiceReducer)
+  .withAnyState()
+  .on(resetNotification(''))
+  .expectDiff({
+    notification: '',
   });
