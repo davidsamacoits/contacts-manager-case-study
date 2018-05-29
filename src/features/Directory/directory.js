@@ -29,6 +29,7 @@ const propTypes = {
   contactDetailLoadRequest: PropTypes.func.isRequired,
   contact: PropTypes.object.isRequired,
   contactDetailReset: PropTypes.func.isRequired,
+  notification: PropTypes.string.isRequired,
 };
 
 const Directory = (props) => {
@@ -46,6 +47,7 @@ const Directory = (props) => {
     contactDetailLoadRequest,
     contact,
     contactDetailReset,
+    notification,
   } = props;
 
   let currentLetter = '';
@@ -126,6 +128,9 @@ const Directory = (props) => {
           </button>
         </div>
       </header>
+      {notification &&
+        <NotificationBox content={notification} />
+      }
       <div className="contacts-container">
         {contacts && contacts.length ? renderContacts() : (
           <p className="contacts--empty">Oops, it is a bit empty here <span role="img" aria-label=":(">🙈</span></p>

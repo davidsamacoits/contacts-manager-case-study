@@ -8,6 +8,7 @@ export const initialState = () => ({
   order: ORDER.ASC,
   search: '',
   error: '',
+  notification: '',
   panelStatus: PANEL_STATUS.CLOSE,
 });
 
@@ -42,6 +43,16 @@ export default (state = initialState(), action) => {
       return {
         ...state,
         search: action.search,
+      };
+    case actionTypes.DIRECTORY_NOTIFY:
+      return {
+        ...state,
+        notification: action.notification,
+      };
+    case actionTypes.DIRECTORY_RESET_NOTIFICATION:
+      return {
+        ...state,
+        notification: '',
       };
     default:
       return state;

@@ -39,3 +39,16 @@ export function searchContact(search) {
   };
 }
 
+export function notify(notification) {
+  return {
+    type: actionTypes.DIRECTORY_NOTIFY,
+    notification,
+  };
+}
+
+export function resetNotification() {
+  return {
+    type: actionTypes.DIRECTORY_RESET_NOTIFICATION,
+  };
+}
+

@@ -1,11 +1,12 @@
 import { put, call, select } from 'redux-saga/effects';
+import { delay } from 'redux-saga';
 import isError from 'lodash/isError';
 
 import { fetchUrl } from '../../utils/network';
 import { guid } from '../../utils/helpers';
 
 import { CONFIG } from '../../config';
-import { HTTP_METHODS } from '../../constants';
+import { HTTP_METHODS, NOTIFICATION_DURATION } from '../../constants';
 
 import { isFormValid } from './formSchema';
 
@@ -19,7 +20,7 @@ import {
 
 import { contactDetailFormError } from '../contactDetailService/actions';
 
-import { closePanel } from '../directoryService/actions';
+import { closePanel, notify, resetNotification } from '../directoryService/actions';
 
 export function* watchContactsLoadRequest(action) {
   // Building headers and url
@@ -81,6 +82,7 @@ export function* watchContactSubmitted() {
     headers.append('Content-Type', 'application/json');
     let params = {};
     let url = '';
+    let notificationMessage = '';
     // If we have an ID we edit the contact, otherwise we create it
     if (contact && contact.id) {
       params = {
@@ -89,6 +91,7 @@ export function* watchContactSubmitted() {
         body: JSON.stringify(contact),
       };
       url = `${CONFIG.API.CONTACTS}${contact.id}`;
+      notificationMessage = `${contact.firstName} ${contact.lastName} was successfully edited.`;
     } else {
       params = {
         method: HTTP_METHODS.POST,
@@ -96,6 +99,7 @@ export function* watchContactSubmitted() {
         body: JSON.stringify({ ...contact, id: guid() }),
       };
       url = `${CONFIG.API.CONTACTS}`;
+      notificationMessage = `${contact.firstName} ${contact.lastName} was successfully added.`;
     }
     const response = yield call(
       fetchUrl,
@@ -111,6 +115,10 @@ export function* watchContactSubmitted() {
     const { order, search } = (yield select()).directoryReducer;
     yield put(closePanel());
     yield put(contactsLoadRequest(order, search));
+    yield put(notify(notificationMessage));
+    // Reset the notification after X seconds
+    yield call(delay, NOTIFICATION_DURATION);
+    yield put(resetNotification());
   } else {
     yield put(contactDetailFormError('All fields are required. Please try again.'));
   }

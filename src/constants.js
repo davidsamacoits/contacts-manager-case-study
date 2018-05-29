@@ -19,3 +19,5 @@ export const INPUT_TYPES = {
   TEXT: 'text',
   PASSWORD: 'password',
 };
+
+export const NOTIFICATION_DURATION = 4000;

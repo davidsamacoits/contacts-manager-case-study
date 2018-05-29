@@ -14,6 +14,7 @@ function mapStateToProps(state) {
     panelStatus: state.directoryReducer.panelStatus,
     search: state.directoryReducer.search,
     contact: state.contactDetailReducer.contact,
+    notification: state.directoryReducer.notification,
   };
 }
 
