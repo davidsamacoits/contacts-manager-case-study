@@ -4,6 +4,8 @@
 
 With this case study I intented to showcase some of my skills and knowledge by building a contacts management app in a couple days. Therefore, some of my technological choices aren't the most simple nor the most optimized ones. 
 
+(https://github.com/davidsamacoits/contacts-manager-case-study/blob/master/screenshot.png "Screenshot")
+
 Some of the packages I used for this project :
 * [React](https://github.com/facebook/react)
 * [Redux](https://github.com/reduxjs/react-redux)
@@ -25,11 +27,11 @@ Some of the packages I used for this project :
 ✅ Create components (directory, cards, detail...)  
 ✅ Set up directory page    
 ✅ Create panel for creation and edition   
-✅ Add fiters (A-Z, Z-A and search by name)    
+✅ Add fiters (A-Z, Z-A and search by last name)    
 ✅ Delete contact    
 ✅ Add contact    
 ✅️ Edit contact    
-⬜️ Write unit tests  
+✅️ Write some unit tests  
 ✅ Add animations and transitions  
 ✅️ Adding notifications boxes 
 
@@ -71,3 +73,19 @@ $ npm i && npm start
 ```
 6. Enjoy! 😎
 
+## Tests
+
+I wrote a couple tests, you can run them using 
+```bash
+$ npm run test
+```
+
+## What's next
+
+Some features could be optimized.
+
+For instance, input fields should display whether the content is valid or not instead of having only one generic big error message.
+
+All sagas, reducers, components and helpers should be tested to ensure everything is working as intended, even after modifications.
+
+Currently this app isn't very optimized for mobile devices. Working with `media queries` should help having a better render on smartphones & tablets.
