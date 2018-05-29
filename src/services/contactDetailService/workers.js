@@ -6,11 +6,10 @@ import { fetchUrl } from '../../utils/network';
 import { CONFIG } from '../../config';
 import { HTTP_METHODS } from '../../constants';
 
-import { contactDetailLoadSuccess } from './actions';
+import { contactDetailLoadSuccess, contactDetailLoadFailure } from './actions';
 import { openPanel } from '../directoryService/actions';
 
 export function* watchContactDetailLoadRequest(action) {
-  console.log('>>>>>>>> action', action);
   // Building headers and url
   const headers = new Headers();
   headers.append('Content-Type', 'application/json');
@@ -25,11 +24,9 @@ export function* watchContactDetailLoadRequest(action) {
     url,
     params,
   );
-  console.log('>>>>>>>> contactDetail', contactDetail);
   // Dispatch error if needed
   if (isError(contactDetail)) {
-    // yield put(contactDetailLoadFailure(contactDetail));
-
+    yield put(contactDetailLoadFailure('Oops, something went wrong. Please try again.'));
   }
   // Open panel for edition / detail
   yield put(openPanel());
