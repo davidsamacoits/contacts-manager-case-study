@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import * as Icons from 'react-icons/lib/md';
 
 import { NOTIFICATION_TYPES } from './constants';
 
@@ -29,12 +28,7 @@ const NotificationBox = (props) => {
         { 'notification-box--danger': type === NOTIFICATION_TYPES.DANGER },
       )}
     >
-      {type === NOTIFICATION_TYPES.SUCCESS &&
-        <p><Icons.MdCheck size={16} /> {content}</p>
-      }
-      {type === NOTIFICATION_TYPES.DANGER &&
-        <p><Icons.MdClose size={16} /> {content}</p>
-      }
+      <p>{content}</p>
     </div>
   );
 };
