@@ -172,13 +172,23 @@
     },
     {
       "firstName": "Yarely",
-      "lastName": "Barr",
+      "lastName": "Barros",
       "jobTitle": "Analyst",
       "phoneHome": "514-377-9786",
       "phoneWork": "613-973-9722",
       "email": "yarely@barr.com",
       "picture": "https://images.unsplash.com/photo-1485960994840-902a67e187c8?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0577c246d091415fa44a2a047f910f52&auto=format&fit=crop&w=2255&q=80",
       "id": "U6d2bfb7abff0b06e07c"
+    },
+    {
+      "firstName": "Eliana",
+      "lastName": "Brout",
+      "jobTitle": "Developer",
+      "phoneHome": "553-298-9722",
+      "phoneWork": "826-926-8262",
+      "email": "eliana@brout.com",
+      "picture": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5d43ec18ec2cf6ff854513b9e8395c1e&auto=format&fit=crop&w=2250&q=80",
+      "id": "U243b83481c8c866f505"
     }
   ]
 }
