@@ -2,7 +2,7 @@
 
 ## Introduction
 
-With this case study I intented to showcase some of my skills and knowledge by building a contacts management app in a couple days. Therefore, some of my technological choices aren't the most simple nor the most optimized ones. 
+With this case study I intented to showcase some of my skills and knowledge by building a contacts management app in a couple days. Therefore, some of my technological choices aren't the most simple. 
 
 ![screenshot](https://github.com/davidsamacoits/contacts-manager-case-study/blob/master/screenshot.png "Screenshot")
 
